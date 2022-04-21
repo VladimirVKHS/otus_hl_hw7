@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  wsserver:
+    container_name: otus_sn_wsserver
+    build:
+      context: .
+    restart: on-failure
+    ports:
+      - "8086:8086"
+    networks:
+      - otus_sn_network
+networks:
+  otus_sn_network:
+    external: true
